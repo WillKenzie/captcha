@@ -2,16 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Captcha Generator</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
   </head>
   <body>
     <div class="container">
-      <div id="captcha" class="captcha"></div>
+      <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
       <div class="restart">
-        <a href="#">Change</a>
+        <a onclick="createCaptcha()" id="reset">Change</a>
       </div>
       <div class="input">
         <input
@@ -21,7 +19,10 @@
           placeholder="What text is there?"
         />
       </div>
-      <div><input type="button" value="Submit" /></div>
+      
+ <div id="submitbox">
+  <input type="button" value="Submit" onclick="validateCaptcha()"/>
+<div>
       <div id="errCaptcha" class="errmsg"></div>
     </div>
   </body>
